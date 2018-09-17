@@ -29,10 +29,8 @@ class OveragesController < ApplicationController
     respond_to do |format|
       if @overage.save
         format.html { redirect_to @overage, notice: 'Overage was successfully created.' }
-        format.json { render :show, status: :created, location: @overage }
       else
         format.html { render :new }
-        format.json { render json: @overage.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +41,8 @@ class OveragesController < ApplicationController
     respond_to do |format|
       if @overage.update(overage_params)
         format.html { redirect_to @overage, notice: 'Overage was successfully updated.' }
-        format.json { render :show, status: :ok, location: @overage }
       else
         format.html { render :edit }
-        format.json { render json: @overage.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,8 +53,12 @@ class OveragesController < ApplicationController
     @overage.destroy
     respond_to do |format|
       format.html { redirect_to overages_url, notice: 'Overage was successfully destroyed.' }
-      format.json { head :no_content }
     end
+  end
+
+  def import
+    Phone.import(params[:file])
+    redirect_to root_url, notice: "Phone list imported."
   end
 
   private
@@ -69,6 +69,6 @@ class OveragesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def overage_params
-      params.require(:overage).permit(:name, :number, :overage_date, :reason, :added_data)
+      params.require(:overage).permit(:name, :phone_number, :overage_date, :reason, :added_data)
     end
 end

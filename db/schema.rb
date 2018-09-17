@@ -10,27 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180917162541) do
+ActiveRecord::Schema.define(version: 20180917184003) do
 
   create_table "overages", force: :cascade do |t|
     t.string "name"
-    t.string "number"
     t.date "overage_date"
     t.string "reason"
     t.float "added_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone_number"
   end
 
   create_table "phones", force: :cascade do |t|
     t.string "wireless_number"
-    t.string "user_number"
     t.string "service_status"
     t.string "upgrade_date"
     t.string "account_number"
     t.string "device_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_name"
   end
 
 end

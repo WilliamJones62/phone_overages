@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Showing Overage</h1>
+
 <p>
   <strong>Name:</strong>
   <%= @overage.name %>
@@ -7,7 +9,7 @@
 
 <p>
   <strong>Number:</strong>
-  <%= @overage.number %>
+  <%= @overage.phone_number %>
 </p>
 
 <p>
@@ -25,5 +27,5 @@
   <%= @overage.added_data %>
 </p>
 
-<%= link_to 'Edit', edit_overage_path(@overage) %> |
-<%= link_to 'Back', overages_path %>
+<%= link_to 'Edit', edit_overage_path(@overage) %>
+<%= link_to 'List', overages_path %>

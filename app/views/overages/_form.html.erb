@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :number %>
-    <%= form.text_field :number, id: :overage_number %>
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, id: :overage_phone_number %>
   </div>
 
   <div class="field">
@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :added_data %>
-    <%= form.text_field :added_data, id: :overage_added_data %>
+    <%= form.number_field :added_data, id: :overage_added_data, :step => 0.01 %>
   </div>
 
   <div class="actions">
