@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wireless_number: MyString
+  user_number: MyString
+  service_status: MyString
+  upgrade_date: MyString
+  account_number: MyString
+  device_id: MyString
+
+two:
+  wireless_number: MyString
+  user_number: MyString
+  service_status: MyString
+  upgrade_date: MyString
+  account_number: MyString
+  device_id: MyString

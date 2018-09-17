@@ -1,0 +1,2 @@
+class Overage < ApplicationRecord
+end

@@ -1,0 +1,42 @@
+<%= form_with(model: overage, local: true) do |form| %>
+  <% if overage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(overage.errors.count, "error") %> prohibited this overage from being saved:</h2>
+
+      <ul>
+      <% overage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :overage_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.text_field :number, id: :overage_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overage_date %>
+    <%= form.date_select :overage_date, id: :overage_overage_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reason %>
+    <%= form.text_field :reason, id: :overage_reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :added_data %>
+    <%= form.text_field :added_data, id: :overage_added_data %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

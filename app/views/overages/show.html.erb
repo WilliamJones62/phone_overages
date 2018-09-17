@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @overage.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @overage.number %>
+</p>
+
+<p>
+  <strong>Overage date:</strong>
+  <%= @overage.overage_date %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @overage.reason %>
+</p>
+
+<p>
+  <strong>Added data:</strong>
+  <%= @overage.added_data %>
+</p>
+
+<%= link_to 'Edit', edit_overage_path(@overage) %> |
+<%= link_to 'Back', overages_path %>
