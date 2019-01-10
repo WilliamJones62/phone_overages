@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :overage_name %>
+    <%= form.select :name, @name_single, {}, {:value => params[:name], :id => "overage_name", :onChange=> ('overagePhoneNumber()')} %>
   </div>
 
   <div class="field">
     <%= form.label :phone_number %>
-    <%= form.text_field :phone_number, id: :overage_phone_number %>
+    <%= form.select :phone_number, @number, {}, {:value => params[:phone_number], :id => "overage_number"} %>
   </div>
 
   <div class="field">
@@ -32,7 +32,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :added_data %>
+    <%= form.label :added_data, "Extra data (MB)" %>
     <%= form.number_field :added_data, id: :overage_added_data, :step => 0.01 %>
   </div>
 
@@ -40,3 +40,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+<p id= "phonenames" hidden> <%= @allname %> </p>
+<p id= "phonenumbers" hidden> <%= @allnumber %> </p>

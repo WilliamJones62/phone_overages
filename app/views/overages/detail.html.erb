@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Overage Detail</h2>
+<h3>Name: <i><%= @name %></i> Total Overage(Mb): <i><%= @data %></i> Overage Count: <i><%= @count %></i></h3>
+
+<table id="normal_dt"  class="stripe" class="mytable" class="display" cellspacing="0">
+  <thead>
+    <tr>
+      <th> Date </th>
+      <th> Reason </th>
+      <th> Data(Mb) </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @overages.each do |s| %>
+      <tr>
+        <td><%= display_date(s.overage_date) %></td>
+        <td><%= s.reason %></td>
+        <td><%= s.added_data %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

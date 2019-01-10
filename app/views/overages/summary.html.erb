@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Overage Summary</h2>
+<h3>Total Overage(Mb): <i><%= @data %></i> Overage Count: <i><%= @count %></i></h3>
+<table id="normal_dt"  class="stripe" class="mytable" class="display" cellspacing="0">
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Data (Mb) </th>
+      <th> Count </th>
+      <th> Detail </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @summaryhash.each do |s| %>
+      <tr>
+        <td><%= s[:name] %></td>
+        <td><%= s[:data] %></td>
+        <td><%= s[:count] %></td>
+        <td><%= link_to 'Detail', overages_detail_path(name: s[:name]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

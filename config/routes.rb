@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'overages/summary'
+  get 'overages/detail'
   resources :overages do
     collection { post :import }
   end

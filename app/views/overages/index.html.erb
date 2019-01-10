@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Overages</h1>
-
 <table id="normal_dt"  class="stripe" class="mytable" class="display" cellspacing="0" >
   <thead>
     <tr>
@@ -9,7 +7,7 @@
       <th>Number</th>
       <th>Overage date</th>
       <th>Reason</th>
-      <th>Added data</th>
+      <th>Extra data(MB)</th>
       <th>Show</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -21,7 +19,7 @@
       <tr>
         <td><%= overage.name %></td>
         <td><%= overage.phone_number %></td>
-        <td><%= overage.overage_date %></td>
+        <td><%= display_date(overage.overage_date) %></td>
         <td><%= overage.reason %></td>
         <td><%= overage.added_data %></td>
         <td><%= link_to 'Show', overage %></td>
